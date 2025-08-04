@@ -7,8 +7,6 @@ const defaults = {
   data: {},
   // callback function.
   fn: (item) => item.value,
-  // container selector.
-  container: 'body',
   // data-key selector.
   dataKey: '[data-key]'
 };
@@ -40,7 +38,7 @@ nx.tpl = function (inOptions) {
   });
 
   // 渲染到容器
-  $(container).empty().append($clone);
+  return $clone;
 };
 
 if (typeof module !== 'undefined' && module.exports && typeof wx === 'undefined') {
