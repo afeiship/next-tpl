@@ -1,6 +1,6 @@
 {
   "name": "@jswork/next-tpl",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Render template with data-key binding.",
   "homepage": "https://js.work",
   "files": [
@@ -53,5 +53,10 @@
     "src/**/*.{js,jsx}": [
       "npm run pretty"
     ]
-  }
+  },
+  "keywords": [
+    "jquery",
+    "template",
+    "tpl"
+  ]
 }
