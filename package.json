@@ -1,52 +1,57 @@
 {
-  "name": "@jswork/topics2keywords",
-  "version": "1.0.1",
-  "description": "Sync github topics to npm keywords.",
-  "homepage": "https://github.com/afeiship/topics2keywords",
+  "name": "@jswork/next-tpl",
+  "version": "1.0.0",
+  "description": "Render template with data-key binding.",
+  "homepage": "https://js.work",
+  "files": [
+    "dist",
+    "index.d.ts"
+  ],
   "author": {
     "name": "afei",
     "email": "1290657123@qq.com"
   },
-  "bin": {
-    "t2k": "bin/index.js",
-    "topics2keywords": "bin/index.js"
+  "scripts": {
+    "build": "gulp",
+    "test": "bun test",
+    "release": "release-it"
   },
-  "main": "index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
   "license": "MIT",
-  "dependencies": {
-    "@jswork/next": "^1.0.4",
-    "@jswork/next-absolute-package": "^1.0.1",
-    "@jswork/next-json-configuration": "^1.0.0",
-    "@jswork/next-slice2str": "^1.0.0",
-    "chalk": "^4.1.0",
-    "commander": "^6.2.0",
-    "git-url-parse": "^11.4.0",
-    "https-proxy-agent": "^5.0.0",
-    "node-fetch": "^2.6.1",
-    "ora": "^5.1.0"
+  "devDependencies": {
+    "@babel/core": "^7.21.3",
+    "@babel/preset-env": "^7.20.2",
+    "@jswork/gulp-pkg-header": "^1.0.8",
+    "@jswork/gulp-registry": "^1.0.45",
+    "@jswork/next": "^1.2.2",
+    "@types/jest": "^29.5.12",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-prettier": "^4.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-replace": "^1.1.4",
+    "gulp-uglify": "^3.0.2",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5",
+    "uglify-save-license": "^0.4.1"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env"
+      ]
+    ]
   },
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
   },
-  "devDependencies": {
-    "prettier": "^2.1.2",
-    "release-it": "^14.2.1"
-  },
-  "keywords": [
-    "github",
-    "topics",
-    "topic",
-    "tag",
-    "keywords",
-    "npm",
-    "nodejs",
-    "cli",
-    "command-line-tool",
-    "t2k",
-    "sync",
-    "tags"
-  ],
-  "scripts": {
-    "release": "release-it"
+  "lint-staged": {
+    "src/**/*.{js,jsx}": [
+      "npm run pretty"
+    ]
   }
 }
