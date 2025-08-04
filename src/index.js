@@ -8,7 +8,7 @@ const defaults = {
   // callback function.
   fn: (item) => item.value,
   // data-key selector.
-  dataKey: '[data-key]'
+  dataKey: 'data-key'
 };
 
 
@@ -27,11 +27,12 @@ nx.tpl = function (inOptions) {
   const template = document.getElementById(options.templateId);
   const clone = document.importNode(template.content, true);
   const $clone = $(clone);
+  const dataSelector = `[${options.dataKey}]`;
 
   // 查找所有带 data-key 的元素
-  $clone.find(options.dataKey).each(function () {
+  $clone.find(dataSelector).each(function () {
     const $elem = $(this);
-    const key = $elem.attr('data-key');
+    const key = $elem.attr(options.dataKey);
     const value = nx.get(options.data, key);
     const fnValue = options.fn({ key, value });
     $elem.html(fnValue);
