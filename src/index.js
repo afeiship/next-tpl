@@ -24,7 +24,7 @@ nx.tpl = function (inOptions) {
 
   if (typeof $ === 'undefined') throw new Error('jQuery is required.');
 
-  const template = document.getElementById(templateId);
+  const template = document.getElementById(options.templateId);
   const clone = document.importNode(template.content, true);
   const $clone = $(clone);
 
@@ -32,7 +32,7 @@ nx.tpl = function (inOptions) {
   $clone.find(options.dataKey).each(function () {
     const $elem = $(this);
     const key = $elem.attr('data-key');
-    const value = nx.get(data, key);
+    const value = nx.get(options.data, key);
     const fnValue = options.fn({ key, value });
     $elem.html(fnValue);
   });

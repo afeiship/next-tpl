@@ -25,6 +25,7 @@
     "@jswork/gulp-pkg-header": "^1.0.8",
     "@jswork/gulp-registry": "^1.0.45",
     "@jswork/next": "^1.2.2",
+    "@rollup/stream": "^3.0.1",
     "@types/jest": "^29.5.12",
     "del": "^6.0.0",
     "gulp": "^4.0.2",
@@ -36,7 +37,10 @@
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
     "prettier": "^3.2.5",
-    "uglify-save-license": "^0.4.1"
+    "rollup": "^4.46.2",
+    "uglify-save-license": "^0.4.1",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
   },
   "babel": {
     "presets": [
