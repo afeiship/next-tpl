@@ -1,6 +1,6 @@
 {
   "name": "@jswork/next-tpl",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Render template with data-key binding.",
   "homepage": "https://js.work",
   "files": [
